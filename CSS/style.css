@@ -1,11 +1,29 @@
-
+body {
+  background: gray;
+}
 h1 {
   text-align: center;
 }
-
+.adjust {
+  display: inline-block;
+  width: 8em;
+  height: 7em;
+  border: 1px solid white;
+  margin: 0 1em;
+  text-align: center;
+}
+.adjust div {
+  display: inline-block;
+  margin: 0 auto;
+  font-size: 2em;
+}
+.adjust_display {
+  margin: 1em auto;
+  text-align: center;
+}
 .clock {
-  width: 500px;
-  height: 500px;
+  width: 25em;
+  height: 25em;
   border: 2px solid limegreen;
   border-radius: 50%;
   margin: 0 auto;
@@ -13,6 +31,6 @@ h1 {
 }
 
 .wrap {
-  width: 600px;
+  width: 90%;
   margin: 5em auto;
 }
