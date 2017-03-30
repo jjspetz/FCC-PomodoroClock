@@ -1,6 +1,6 @@
 $(document).ready(function(){
-current_break = 5;
-current_session = 25;
+var current_break = 5;
+var current_session = 25;
 
 // adjust times for break and session
 $("#break_plus").click(function(){
@@ -24,5 +24,8 @@ $("#session_minus").click(function(){
 })
 
 // manipulates the clock circle
+var s_minutes = current_session;
+var b_minutes = current_break;
+
 
 });
