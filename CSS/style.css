@@ -36,10 +36,12 @@ h1, h3 {
   margin: 1em auto;
   background-image: linear-gradient(0deg, limegreen 0%, transparent 0%);
 }
+#filler{
+  visibility: hidden;
+}
 #start {
   width: 3em;
-  margin: 0 auto;
-  margin-top: 7em;
+  margin: 1em auto;
   padding: 0.5em;
   border: 1px solid white;
   border-radius: 2px;
@@ -48,8 +50,7 @@ h1, h3 {
 }
 #stop {
   width: 3em;
-  margin: 0 auto;
-  margin-top: 7em;
+  margin: 1em auto;
   padding: 0.5em;
   border: 1px solid white;
   border-radius: 2px;
@@ -58,8 +59,16 @@ h1, h3 {
 }
 #timer {
   width 5em;
-  margin: 1em auto;
+  margin: 0.7em auto;
   text-align: center;
+  font-size: 3em;
+}
+.title {
+  width: 4em;
+  margin: 0 auto;
+  margin-top: 3em;
+  text-align: center;
+  font-size: 2.5em;
 }
 .wrap {
   width: 90%;
