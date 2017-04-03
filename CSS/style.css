@@ -28,13 +28,13 @@ h1, h3 {
   margin: 2em auto;
   text-align: center;
 }
-.clock {
+#clock {
   width: 25em;
   height: 25em;
   border: 3px solid limegreen;
   border-radius: 50%;
   margin: 1em auto;
-  background-image: linear-gradient(0deg, limegreen 0%, transparent 0%);
+  background: linear-gradient(0deg, limegreen 0%, transparent 0%);
 }
 #filler{
   visibility: hidden;

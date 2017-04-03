@@ -2,6 +2,7 @@ $(document).ready(function(){
 var current_break = 5;
 var current_session = 25;
 var stop = false;
+var start = false;
 
 // hide show because only start or show should ever be visible
 $('#stop, #break, #session').hide();
@@ -29,6 +30,9 @@ $("#session_plus").click(function(){
     current_session++;
   }
   $('#session_time').html(current_session);
+  if (!start) {
+    $('#timer').html(displayTime(current_session));
+  }
 })
 
 $("#session_minus").click(function(){
@@ -36,6 +40,9 @@ $("#session_minus").click(function(){
     current_session--;
   }
   $('#session_time').html(current_session);
+  if (!start) {
+    $('#timer').html(displayTime(current_session));
+  }
 })
 
 // COUNTDOWN LOGIC
@@ -51,6 +58,7 @@ $('#start').click(function(){
   var min;
   var sec;
   stop = false;
+  start = true;
 
   // session time
   function sessionTimer(countdown) {
@@ -68,7 +76,6 @@ $('#start').click(function(){
         $('#timer').html(displayTime(current_break));
         return loop(2);
       }
-
       $('#timer').html(displayTime(countdown/60));
       countdown--;
   }, 1000);
@@ -115,6 +122,7 @@ $('#start').click(function(){
 $('#stop').click(function(){
   // kill loop function
   stop = true;
+  start = false;
 
   // replaces stop with start
   $('#stop').hide();
