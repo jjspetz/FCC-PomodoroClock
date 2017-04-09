@@ -1,11 +1,11 @@
 $(document).ready(function(){
-var current_break = 5;
-var current_session = 25;
+var current_break = 1;
+var current_session = 1;
 var stop = false;
 var start = false;
 
-// hide show because only start or show should ever be visible
-$('#stop, #break, #session').hide();
+// hides alternate buttons
+$('#break, #session').hide();
 
 // sets clock to default time
 $('#timer').html(displayTime(current_session));
@@ -49,9 +49,6 @@ $("#session_minus").click(function(){
 // when start is pressed an infinite loop starts alternating between
 // session and break count downs.
 $('#start').click(function(){
-  // hide start button
-  $('#start').hide();
-  $('#stop').show();
 
   // declare variables
   var counter;
@@ -62,8 +59,11 @@ $('#start').click(function(){
 
   // session time
   function sessionTimer(countdown) {
+    // start clock hand moving
+    $('#invisible-clock').css("animation",  "countdown "+ (countdown + 1) +"s linear infinite reverse");
+    // displays "session" inside clock
     $('#session').show();
-    $('#break, #filler').hide();
+    $('#break, #start').hide();
     // check to see if stop has been pressed
     counter = setInterval(function(){
       if (stop) {
@@ -83,8 +83,11 @@ $('#start').click(function(){
   }
   // break time
   function breakTimer(countdown) {
+    // start clock hand moving
+    $('#invisible-clock').css("animation",  "countdown "+ (countdown + 1) +"s linear infinite reverse");
+    // displays "break" in the clock
     $('#break').show();
-    $('#session, #filler').hide();
+    $('#session, #start').hide();
     counter = setInterval(function(){
       if (stop) {
         clearInterval(counter);
@@ -119,30 +122,26 @@ $('#start').click(function(){
     loop(1);
 })
 
-$('#stop').click(function(){
+// hands what happens when stop is clicked
+$('#session, #break').click(function(){
   // kill loop function
   stop = true;
   start = false;
 
-  // replaces stop with start
-  $('#stop').hide();
-  $('#start').show();
   // hides break and session
   $('#session, #break').hide();
-  $('#filler').show();
+  $('#start').show();
+
+  // resets clock hand
+  $('#invisible-clock').css("animation",  "none");
 })
 
 function displayTime(time) {
   //calculates and formats time
-  time = time * 60;
+  time = Math.round(time * 60);
   min = Math.floor(time / 60);
   sec = String("0" + (time % 60)).slice(-2);
 
   return "<div>" + min + ":" + sec + "</div>";
 }
-
-  // add sound
-  // pretty up the page
-  // add fill to circle
-
 });
