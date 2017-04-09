@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 
-KNOWN ISSUES
-1. figure out how to reset clock hand to top position
-2. add alarm sound
-3. reset default session and break times.
-
+<!-- KNOWN ISSUES
+1. add alarm sound
+ -->
 
 <html>
 <head>
@@ -16,26 +14,26 @@ KNOWN ISSUES
 <body>
   <div class="wrap">
     <h1>FCC: Pomodoro Clock</h1>
-    <div id="clock">
+    <div id="outerClock">
+    <div id="innerClock">
       <h2 class="title" id="start">Start</h2>
       <h2 class="title" id="session">Session</h2>
       <h2 class="title" id="break">Break</h2>
       <div id="timer"></div>
+  </div>
     </div>
-    <div id="invisible-clock">
-      <div id="hand"></div>
-    </div>
+    <div id="inv-clo-con"></div>
     <div class="adjust_display">
     <div class="adjust">
       <h3>BREAK</h3>
       <div id="break_plus">+</div>
-      <div id="break_time">1</div>
+      <div id="break_time">5</div>
       <div id="break_minus">-</div>
     </div>
     <div class="adjust">
       <h3>SESSION</h3>
       <div id="session_plus">+</div>
-      <div id="session_time">1</div>
+      <div id="session_time">25</div>
       <div id="session_minus">-</div>
     </div>
     </div>

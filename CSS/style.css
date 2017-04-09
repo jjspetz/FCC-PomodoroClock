@@ -27,14 +27,23 @@ h1, h3 {
   margin: 2em auto;
   text-align: center;
 }
-#clock {
+#outerClock {
   position: relative;
   width: 25em;
   height: 25em;
   border: 3px solid limegreen;
   border-radius: 50%;
   margin: 1em auto;
-
+}
+#innerClock {
+  background: green;
+  position: relative;
+  width: 15em;
+  height: 15em;
+  border: 2px solid white;
+  border-radius: 50%;
+  margin: 5em auto;
+  box-shadow: 1px 1px 2px #000;
 }
 #invisible-clock {
   position: relative;
@@ -43,16 +52,24 @@ h1, h3 {
   border-radius: 50%;
   margin: 0 auto;
   margin-top: -26em;
-  z-index: -20;
+  z-index: -1;
 }
 #hand {
   position: absolute;
   top: 0.5em;
-  right: 12.5em;
+  right: 12.05em;
   width: 1em;
   height: 1em;
   background: limegreen;
   transform: rotate(45deg);
+}
+#hand2 {
+  position: absolute;
+  top: 0.5em;
+  right: 12.5em;
+  width: 2px;
+  height: 4.5em;
+  background: limegreen;
 }
 #timer {
   width 5em;
@@ -61,18 +78,18 @@ h1, h3 {
   font-size: 3em;
 }
 .title {
+  background: gray;
   width: 4em;
   margin: 0 auto;
-  margin-top: 3.25em;
+  margin-top: 1.5em;
   text-align: center;
   font-size: 2.5em;
-  border: 1px solid white;
+  border: 2px solid white;
   border-radius: 4px;
-  box-shadow: 1px 1px 2px #000;
 }
 .wrap {
   width: 90%;
-  margin: 3em auto;
+  margin: 2em auto;
 }
 @keyframes countdown {
     100% {
